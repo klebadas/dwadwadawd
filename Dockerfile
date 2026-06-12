@@ -11,4 +11,4 @@ RUN chmod +x /usr/local/bin/cloudflared
 RUN echo "<h1>Tunnel Active</h1>" > /index.html
 
 # Comando que roda o servidor fake na porta que a Render mandar ($PORT) e inicia o túnel da Cloudflare
-CMD python3 -m http.server $PORT & cloudflared tunnel run --token $TUNNEL_TOKEN
+CMD python3 -m http.server $PORT & exec cloudflared tunnel run --token $TUNNEL_TOKEN
